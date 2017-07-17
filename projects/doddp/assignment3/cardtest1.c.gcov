@@ -1,0 +1,61 @@
+        -:    0:Source:cardtest1.c
+        -:    0:Programs:44
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include "rngs.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <math.h>
+        -:    6:#include <stdlib.h>
+        -:    7:
+        -:    8:// Card 1: Adventurer
+function main called 3 returned 100% blocks executed 94%
+        3:    9:int main(){
+        3:   10:	printf("Card Test 1: adventurerCard()\n\n");
+call    0 returned 3
+        3:   11:	struct gameState* state = malloc(sizeof(struct gameState));
+        -:   12:	int temphand[10];
+        -:   13:	//memset(temphand, '\0', sizeof(temphand));
+        -:   14:	int i;
+        -:   15:
+        -:   16:	// Kingdom Cards
+        3:   17:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
+        -:   18:
+        3:   19:	initializeGame(2, k, 1, state);
+call    0 returned 3
+        -:   20:
+       18:   21:	for (i = 0; i < 5; i++){
+branch  0 taken 15
+branch  1 taken 3 (fallthrough)
+       15:   22:		state->hand[0][i] = silver;
+        -:   23:		//printf("%i\n", state->hand[0][i]);
+        -:   24:	}
+       18:   25:	for (i = 5; i < 10; i++){
+branch  0 taken 15
+branch  1 taken 3 (fallthrough)
+       15:   26:		state->hand[0][i] = adventurer;
+        -:   27:		//printf("%i\n", state->hand[0][i]);
+        -:   28:	}
+        3:   29:	state->deckCount[0] = 0;
+        3:   30:	state->handCount[0] = 10;
+        3:   31:	adventurerCard(state, 0, 0, temphand, 0, 0);
+call    0 returned 3
+        -:   32:
+        3:   33:	i = 0;
+       21:   34:	while (state->discard[0][i] > 0){
+branch  0 taken 15
+branch  1 taken 3 (fallthrough)
+       15:   35:		i++;
+        -:   36:	}
+        -:   37:
+        -:   38:	// Hand = 1-5: silver, 6-10: adventurer. All 5 Adventurers should
+        -:   39:	// be discarded.
+        3:   40:	if (i == 5)
+branch  0 taken 3 (fallthrough)
+branch  1 taken 0
+        3:   41:		printf("PASS: All 5 adventurers discarded\n");
+call    0 returned 3
+        -:   42:	else
+    #####:   43:		printf("FAIL: Not all 5 adventurers discarded\n");
+call    0 never executed
+        3:   44:	return 0;
+        -:   45:}

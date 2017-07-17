@@ -1,0 +1,95 @@
+Unit Test 1: playCard()
+
+PASS: if playCard fails due to improper game state.
+PASS: playCard fails due to < 1 turns.
+FAIL: cardEffect fails.
+FAIL: numActions is not decremented.
+File 'dominion.c'
+Lines executed:36.01% of 561
+Branches executed:34.53% of 417
+Taken at least once:27.82% of 417
+Calls executed:22.68% of 97
+Creating 'dominion.c.gcov'
+
+Unit Test 2: getWinners()
+
+Case: 2 players
+PASS: Player 1 wins
+Case: 3 players
+PASS: Player 1 wins
+Case: 4 players
+PASS: Player 1 wins
+File 'dominion.c'
+Lines executed:36.01% of 561
+Branches executed:34.53% of 417
+Taken at least once:27.82% of 417
+Calls executed:22.68% of 97
+Creating 'dominion.c.gcov'
+
+Unit Test 3: isGameOver()
+
+PASS: province == 0, GAME OVER
+PASS: supply count depleted, GAME OVER
+File 'dominion.c'
+Lines executed:36.01% of 561
+Branches executed:34.53% of 417
+Taken at least once:27.82% of 417
+Calls executed:22.68% of 97
+Creating 'dominion.c.gcov'
+
+Unit Test 4: whosTurn()
+
+PASS: whoseTurn == 0
+PASS: whoseTurn == 1
+PASS: whoseTurn == 2
+PASS: whoseTurn == 3
+File 'dominion.c'
+Lines executed:36.01% of 561
+Branches executed:34.53% of 417
+Taken at least once:27.82% of 417
+Calls executed:22.68% of 97
+Creating 'dominion.c.gcov'
+
+Card Test 1: adventurerCard()
+
+PASS: All 5 adventurers discarded
+File 'dominion.c'
+Lines executed:36.01% of 561
+Branches executed:34.53% of 417
+Taken at least once:27.82% of 417
+Calls executed:22.68% of 97
+Creating 'dominion.c.gcov'
+
+Card Test 2: smithyCard()
+
+Hand = 4 smithy. Play 1 smithy, draw three cards.
+Hand size should == 6 after playing 1 Smithy (4+3-1=6)
+FAIL: Incorrect hand size. Hand size == 9
+File 'dominion.c'
+Lines executed:36.01% of 561
+Branches executed:34.53% of 417
+Taken at least once:27.82% of 417
+Calls executed:22.68% of 97
+Creating 'dominion.c.gcov'
+
+Card Test 3: stewardCard()
+
+PASS: 2 cards drawn.
+PASS: 2 coins added.
+File 'dominion.c'
+Lines executed:36.01% of 561
+Branches executed:34.53% of 417
+Taken at least once:27.82% of 417
+Calls executed:22.68% of 97
+Creating 'dominion.c.gcov'
+
+Card Test 4: greatHallCard()
+
+FAIL: numActions not incremented by 1.
+File 'dominion.c'
+Lines executed:36.01% of 561
+Branches executed:34.53% of 417
+Taken at least once:27.82% of 417
+Calls executed:22.68% of 97
+Creating 'dominion.c.gcov'
+
