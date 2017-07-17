@@ -76,19 +76,9 @@ tests:
 	./cardtest4 &>> unittestresults.out
 	gcov -b -c dominion.c >> unittestresults.out
 
-unittestresults.out: unittest1.c unittest2.c dominion.o rngs.o
-	gcc -g -o unittest1 unittest1.c dominion.o rngs.o $(CFLAGS)
-	./unittest1 &> tests.out
-	gcov -b -c dominion.c >> tests.out
-	gcc -g -o unittest2 unittest2.c dominion.o rngs.o $(CFLAGS)
-	./unittest2 &>> tests.out
-	gcov -b -c dominion.c >> tests.out
-
-test: unittestresults.out
+unittestresults.out: tests
 
 all: playdom player testDrawCard testBuyCard badTestDrawCard unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
-
-
 
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
