@@ -1,0 +1,11 @@
+Adventurer
+
+Total Passes: 999999
+Total Fails: 1
+File 'dominion.c'
+Lines executed:25.85% of 561
+Branches executed:22.06% of 417
+Taken at least once:18.94% of 417
+Calls executed:15.46% of 97
+Creating 'dominion.c.gcov'
+

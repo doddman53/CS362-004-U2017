@@ -1,2 +1,2 @@
-# CS362-004-U2017
-SOFTWARE ENGINEERING II (CS_362_400_U2017) Summer 2017 Ecampus-Distance Education.
+Assignment-2 Submission: Code refactor of Smithy, Adventurer, Minion, Steward, and Great Hall.
+Bugs introduced to Smithy, Adventurer, Minion, and Great Hall.
