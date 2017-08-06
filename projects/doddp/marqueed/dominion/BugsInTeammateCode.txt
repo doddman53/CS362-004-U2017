@@ -1,0 +1,20 @@
+Bugs found:
+•	Adventurer: When using a deck of 5 gold cards and 5 adventurer cards, and the user playing an adventurer, not all of the adventurer cards were discarded, as would be expected.  This caused my unit test to fail, signifying a bug in the code that wasn’t acknowledging gold as a treasure card.
+•	Smithy: The bug I found in Smithy had to do with the hand size after playing a Smithy card.  With a hand count of 4 cards, and playing one Smithy, I would expect the new total hand size to be 6: 4 cards, play one Smithy (-1), and add two cards, resulting in 6 total.  The total hand size ended up to be 9, causing my unit test to fail and find a bug, indicating that there was a bug in his code with how many cards are added to the hand once a Smithy is played.
+For my random tests, I just ran large sets (1 million) of random inputs, and the only bugs found were the same ones in Adventure and Smithy.  For every card, either every test failed or passed, indicating either the presence of a bug, or the lack of a bug.
+
+
+For my debugging, I was able to find the bugs without the use of a debugger.  I simply saw what test cases of mine were failing, looked at Edgar’s code, and was able to determine exactly were in his code the bugs were.  In his implementation of Smithy, the bug was in the following for loop:
+
+for (i = 0; i < 5; i++) {
+	drawCard(currentPlayer, state);
+}
+
+The bug is that “i” should be less than 3, not 5.  This makes the function add two more cards than it’s supposed to, resulting in a bug.
+The bug in Adventurer was found in this section of Edgar’s code:
+
+if (cardDrawn == copper || cardDrawn == silver)
+	drawntreasure++;
+
+The conditional statement should also contain “|| cardDrawn == gold”.  Since it doesn’t contain that condition, the function doesn’t recognize gold as a treasure card, resulting in a bug.  In every other scenario with the rest of the cards, all tests passed, which was expected.
+
